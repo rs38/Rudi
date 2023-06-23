@@ -4,6 +4,19 @@
     <title>Rudis Eieruhr</title>
 </head>
 <body>
+    
+    <style>
+        body {
+            font-size: 48px;
+        }
+        #timestr, #secs, #startButton, #grammInput, label {
+            font-size: 48px;
+        }
+        button {
+            font-size: 48px;
+        }
+    </style>
+    
     <label for="grammInput">Gramm pro Ei:</label>
     <input type="number" id="grammInput" name="grammInput" value="60">
  
@@ -12,7 +25,7 @@
     <button id="startButton">Starte Eieruhr</button>
 
     <p>Sekunden: <span id="secs"> 100</span></p>
-    <h1>Minuten: <span id="timestr"> 1:40</span></h1>
+    <p></p>Minuten: <span id="timestr"> 1:40</span></p>
     
 
     <audio id="alarmSound" src="kikeriki.mp3"></audio>
