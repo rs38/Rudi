@@ -9,7 +9,8 @@ let timerid;
 init();
 
 function updateInput() {
-  seconds = 2 * (weight + 114)
+  weight = parseInt( document.getElementById("grammInput").value);
+  seconds = 2 * (weight )
  
   document.getElementById("timestr").innerHTML = formatTime(seconds);
   document.getElementById("secs").innerHTML = seconds;
@@ -24,15 +25,19 @@ function init() {
 
   const startButton = document.getElementById("startButton");
   const grammInput = document.getElementById("grammInput");
+  const soundButton = document.getElementById("soundButton");
   
   startButton.addEventListener("click", function() {
-    weight =  parseInt( document.getElementById("grammInput").value);
     updateInput();
     timerid = setInterval(updateTimer, timerInterval);
   });
 
+  soundButton.addEventListener("click", function() {
+   playsound();
+  });
+
   grammInput.addEventListener("change", function() {
-    weight = parseInt( document.getElementById("grammInput").value);
+
     updateInput();
   });
 
@@ -40,15 +45,15 @@ function init() {
 
 function updateTimer() {
   seconds--;
+  
+   document.getElementById("secs").innerHTML = seconds;
+  document.getElementById("timestr").innerHTML = formatTime(seconds);
 
   if (seconds <= 0) {
     playsound();
     clearInterval(timerid);
   }
 
- 
-  document.getElementById("secs").innerHTML = seconds;
-  document.getElementById("timestr").innerHTML = formatTime(seconds);
 }
 
 function formatTime(seconds) {
