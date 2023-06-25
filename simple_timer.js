@@ -10,7 +10,7 @@ init();
 
 function updateInput() {
   weight = parseInt( document.getElementById("grammInput").value);
-  seconds = 2 * (weight )
+  seconds = 2 * (weight + 114 )
  
   document.getElementById("timestr").innerHTML = formatTime(seconds);
   document.getElementById("secs").innerHTML = seconds;
